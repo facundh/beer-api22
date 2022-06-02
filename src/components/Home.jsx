@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import BeerList from './BeerList';
 import BeerModal from './BeerModal';
 
@@ -13,6 +13,12 @@ const Home = () => {
       <Container className='mt-5' >
           <BeerList />
         <BeerModal />
+        <Button 
+        variant='success'
+        value='Siguiente'
+        onClick={}
+        
+        />
       </Container>
     </>
    

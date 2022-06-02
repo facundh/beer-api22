@@ -11,6 +11,7 @@ const BeerProvider = ({ children }) => {
   const [beer, setBeer] = useState({});
   const [cargando, setCargando] = useState(false);
 
+
   const handleModalClick = () => {
     setModal(!modal);
   };
@@ -27,7 +28,7 @@ const BeerProvider = ({ children }) => {
       try {
         const url = `https://api.punkapi.com/v2/beers/${beerId}`;
         const { data } = await axios(url);
-        console.log(data[0])
+        
         setBeer(data[0])
       } catch (error) {
         console.log(error);
@@ -45,6 +46,7 @@ const BeerProvider = ({ children }) => {
       const { data } = await axios(url);
       
       setBeers(data);
+     
     } catch (error) {
       console.log(error);
     }
@@ -54,11 +56,16 @@ const BeerProvider = ({ children }) => {
     getBeers();
   }, []);
 
- 
+  const handleChangePag = () => {
+    console.log('Cambio de pagina')
+  }
+
+
+
 
 
   return (
-    <BeerConsumer.Provider value={{ beers, handleModalClick, handleBebidaId, beer, setBeer, modal, cargando }}>
+    <BeerConsumer.Provider value={{ beers, handleModalClick, handleBebidaId, beer, setBeer, modal, cargando,handleChangePag }}>
       {children}
     </BeerConsumer.Provider>
   );

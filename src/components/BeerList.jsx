@@ -6,8 +6,11 @@ import { Row } from 'react-bootstrap';
 const BeerList = () => {
     const {beers} = useBeer();
     
-   
+    
+    
   return (
+ 
+    
     <Row className='mt-4'>
         {
             beers.map(beer => (
@@ -15,6 +18,10 @@ const BeerList = () => {
             ))
         }
     </Row>
+
+     
+
+
   )
 }
 
